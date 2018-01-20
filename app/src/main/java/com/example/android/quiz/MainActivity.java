@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
                             rbAnswer2.setText(question.get(index).getAnswer2());
                             rbAnswer3.setText(question.get(index).getAnswer3());
                         }
-                        if (index == question.size() - 1){
+                        if (index == question.size()){
                             // Open result activity
                             Intent resultIntent = new Intent (MainActivity.this, ResultActivity.class);
                             // Copy question ArrayList to result activity
