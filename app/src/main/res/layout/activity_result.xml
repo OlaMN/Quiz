@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="@dimen/item_margin_standard"
-            android:paddingTop="@dimen/item_margin_standard"
+            android:paddingTop="@dimen/item_margin_small"
             android:paddingBottom="@dimen/item_padding_small"
             android:src="@drawable/ic_empty"/>
 
@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="@dimen/item_margin_standard"
-            android:paddingTop="@dimen/item_margin_standard"
+            android:paddingTop="@dimen/item_margin_small"
             android:paddingBottom="@dimen/item_padding_small"
             android:textColor="@android:color/black"
             android:textSize="16sp"/>
@@ -72,7 +72,7 @@
             android:layout_height="wrap_content"
             android:paddingLeft="@dimen/item_margin_standard"
             android:paddingTop="@dimen/item_padding_small"
-            android:paddingBottom="@dimen/item_padding_small"
+            android:paddingBottom="@dimen/item_margin_small"
             android:src="@drawable/ic_wrong"/>
 
         <TextView
@@ -81,7 +81,7 @@
             android:layout_height="wrap_content"
             android:paddingLeft="@dimen/item_margin_standard"
             android:paddingTop="@dimen/item_padding_small"
-            android:paddingBottom="@dimen/item_margin_standard"
+            android:paddingBottom="@dimen/item_margin_small"
             android:textColor="@android:color/black"
             android:textSize="16sp"/>
     </LinearLayout>
@@ -111,14 +111,17 @@
                 android:id="@+id/tv_question1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/item_margin_standard"/>
+                android:layout_marginTop="@dimen/item_margin_small"
+                android:layout_marginLeft="@dimen/item_margin_standard"
+                android:layout_marginBottom="@dimen/item_margin_small"/>
 
             <RadioGroup
                 android:id="@+id/rg_question1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="@dimen/item_margin_standard" >
+                android:paddingLeft="@dimen/item_margin_standard"
+                android:paddingBottom="@dimen/item_margin_small" >
 
                 <RadioButton
                     android:id="@+id/rb_answer1_1"
@@ -146,14 +149,17 @@
                 android:id="@+id/tv_question2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/item_margin_standard"/>
+                android:layout_marginTop="@dimen/item_margin_small"
+                android:layout_marginLeft="@dimen/item_margin_standard"
+                android:layout_marginBottom="@dimen/item_margin_small"/>
 
             <RadioGroup
                 android:id="@+id/rg_question2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="@dimen/item_margin_standard" >
+                android:paddingLeft="@dimen/item_margin_standard"
+                android:paddingBottom="@dimen/item_margin_small" >
 
                 <RadioButton
                     android:id="@+id/rb_answer2_1"
@@ -181,14 +187,17 @@
                 android:id="@+id/tv_question3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/item_margin_standard"/>
+                android:layout_marginTop="@dimen/item_margin_small"
+                android:layout_marginLeft="@dimen/item_margin_standard"
+                android:layout_marginBottom="@dimen/item_margin_small"/>
 
             <RadioGroup
                 android:id="@+id/rg_question3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="@dimen/item_margin_standard" >
+                android:paddingLeft="@dimen/item_margin_standard"
+                android:paddingBottom="@dimen/item_margin_small" >
 
                 <RadioButton
                     android:id="@+id/rb_answer3_1"
@@ -216,14 +225,17 @@
                 android:id="@+id/tv_question4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/item_margin_standard"/>
+                android:layout_marginTop="@dimen/item_margin_small"
+                android:layout_marginLeft="@dimen/item_margin_standard"
+                android:layout_marginBottom="@dimen/item_margin_small"/>
 
             <RadioGroup
                 android:id="@+id/rg_question4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="@dimen/item_margin_standard" >
+                android:paddingLeft="@dimen/item_margin_standard"
+                android:paddingBottom="@dimen/item_margin_small" >
 
                 <RadioButton
                     android:id="@+id/rb_answer4_1"
@@ -251,14 +263,17 @@
                 android:id="@+id/tv_question5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/item_margin_standard"/>
+                android:layout_marginTop="@dimen/item_margin_small"
+                android:layout_marginLeft="@dimen/item_margin_standard"
+                android:layout_marginBottom="@dimen/item_margin_small"/>
 
             <RadioGroup
                 android:id="@+id/rg_question5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="@dimen/item_margin_standard" >
+                android:paddingLeft="@dimen/item_margin_standard"
+                android:paddingBottom="@dimen/item_margin_small" >
 
                 <RadioButton
                     android:id="@+id/rb_answer5_1"
@@ -286,14 +301,17 @@
                 android:id="@+id/tv_question6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/item_margin_standard"/>
+                android:layout_marginTop="@dimen/item_margin_small"
+                android:layout_marginLeft="@dimen/item_margin_standard"
+                android:layout_marginBottom="@dimen/item_margin_small"/>
 
             <RadioGroup
                 android:id="@+id/rg_question6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="@dimen/item_margin_standard" >
+                android:paddingLeft="@dimen/item_margin_standard"
+                android:paddingBottom="@dimen/item_margin_small" >
 
                 <RadioButton
                     android:id="@+id/rb_answer6_1"
@@ -321,14 +339,17 @@
                 android:id="@+id/tv_question7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/item_margin_standard"/>
+                android:layout_marginTop="@dimen/item_margin_small"
+                android:layout_marginLeft="@dimen/item_margin_standard"
+                android:layout_marginBottom="@dimen/item_margin_small"/>
 
             <RadioGroup
                 android:id="@+id/rg_question7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="@dimen/item_margin_standard" >
+                android:paddingLeft="@dimen/item_margin_standard"
+                android:paddingBottom="@dimen/item_margin_small" >
 
                 <RadioButton
                     android:id="@+id/rb_answer7_1"
@@ -356,14 +377,17 @@
                 android:id="@+id/tv_question8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/item_margin_standard"/>
+                android:layout_marginTop="@dimen/item_margin_small"
+                android:layout_marginLeft="@dimen/item_margin_standard"
+                android:layout_marginBottom="@dimen/item_margin_small"/>
 
             <RadioGroup
                 android:id="@+id/rg_question8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="@dimen/item_margin_standard" >
+                android:paddingLeft="@dimen/item_margin_standard"
+                android:paddingBottom="@dimen/item_margin_small" >
 
                 <RadioButton
                     android:id="@+id/rb_answer8_1"
@@ -391,14 +415,17 @@
                 android:id="@+id/tv_question9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/item_margin_standard"/>
+                android:layout_marginTop="@dimen/item_margin_small"
+                android:layout_marginLeft="@dimen/item_margin_standard"
+                android:layout_marginBottom="@dimen/item_margin_small"/>
 
             <RadioGroup
                 android:id="@+id/rg_question9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="@dimen/item_margin_standard" >
+                android:paddingLeft="@dimen/item_margin_standard"
+                android:paddingBottom="@dimen/item_margin_small" >
 
                 <RadioButton
                     android:id="@+id/rb_answer9_1"
@@ -426,14 +453,17 @@
                 android:id="@+id/tv_question10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/item_margin_standard"/>
+                android:layout_marginTop="@dimen/item_margin_small"
+                android:layout_marginLeft="@dimen/item_margin_standard"
+                android:layout_marginBottom="@dimen/item_margin_small"/>
 
             <RadioGroup
                 android:id="@+id/rg_question10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="@dimen/item_margin_standard" >
+                android:paddingLeft="@dimen/item_margin_standard"
+                android:paddingBottom="@dimen/item_margin_small" >
 
                 <RadioButton
                     android:id="@+id/rb_answer10_1"
