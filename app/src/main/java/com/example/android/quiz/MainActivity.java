@@ -8,9 +8,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioGroup;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ArrayList<TextView> rbAnswer3 = new ArrayList<TextView>();
     ArrayList<Button> btnSubmit = new ArrayList<Button>();
     Button btnResult;
+    ScrollView scrollView;
     int index = 0;
     private boolean isBackBtnPressed = false;
 
@@ -123,13 +124,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         rbAnswer3.add((TextView) findViewById(R.id.rb_answer10_3));
         btnSubmit.add((Button) findViewById(R.id.btn_submit10));
 
+        scrollView = (ScrollView) findViewById(R.id.listview_quiz);
         btnResult = (Button) findViewById(R.id.btn_result);
 
-        // Display 1st question's text
-        tvQuestion.get(0).setText(question.get(0).getQuestion());
-        rbAnswer1.get(0).setText(question.get(0).getAnswer1());
-        rbAnswer2.get(0).setText(question.get(0).getAnswer2());
-        rbAnswer3.get(0).setText(question.get(0).getAnswer3());
+        // Display question's text
+        for (int i = 0; i < question.size(); i++) {
+            tvQuestion.get(i).setText(question.get(i).getQuestion());
+            rbAnswer1.get(i).setText(question.get(i).getAnswer1());
+            rbAnswer2.get(i).setText(question.get(i).getAnswer2());
+            rbAnswer3.get(i).setText(question.get(i).getAnswer3());
+        }
 
         // // Hide questions 1-9
         for (int i = 1; i < question.size(); i++) {
@@ -192,7 +196,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 // Disable radio buttons selection
                 for (int i = 0; i < rgQuestion.get(index).getChildCount(); i++) {
-                    rgQuestion.get(index).getChildAt(i).setClickable(false);
+                    rgQuestion.get(index).getChildAt(i).setEnabled(false);
                 }
                 // Disable submit button clicking and change its color
                 btnSubmit.get(index).setClickable(false);
@@ -206,10 +210,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     tvQuestion.get(index).setVisibility(View.VISIBLE);
                     rgQuestion.get(index).setVisibility(View.VISIBLE);
                     btnSubmit.get(index).setVisibility(View.VISIBLE);
-                    tvQuestion.get(index).setText(question.get(index).getQuestion());
-                    rbAnswer1.get(index).setText(question.get(index).getAnswer1());
-                    rbAnswer2.get(index).setText(question.get(index).getAnswer2());
-                    rbAnswer3.get(index).setText(question.get(index).getAnswer3());
+                    // Scroll to next question's submit button
                     btnSubmit.get(index).getParent().requestChildFocus(btnSubmit.get(index), btnSubmit.get(index));
                 }
             }
@@ -244,6 +245,57 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     isBackBtnPressed = false;
                 }
             }, 2000);
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putParcelableArrayList("questionArrayList", question);
+        outState.putInt("questionIndex", index);
+        super.onSaveInstanceState(outState);
+    }
+
+    /**
+     * Save state on rotation
+     */
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        question = savedInstanceState.getParcelableArrayList("questionArrayList");
+        index = savedInstanceState.getInt("questionIndex");
+        for (int i = 0; i < question.size(); i++){
+            if (question.get(i).submitClicked){
+                tvQuestion.get(i).setVisibility(View.VISIBLE);
+                rgQuestion.get(i).setVisibility(View.VISIBLE);
+                btnSubmit.get(i).setVisibility(View.VISIBLE);
+                for (int j = 0; j < rgQuestion.get(i).getChildCount(); j++) {
+                    rgQuestion.get(i).getChildAt(j).setEnabled(false);
+                }
+                btnSubmit.get(i).setClickable(false);
+                btnSubmit.get(i).setBackgroundColor(getResources().getColor(R.color.colorGray));
+            } else {
+                tvQuestion.get(i).setVisibility(View.VISIBLE);
+                rgQuestion.get(i).setVisibility(View.VISIBLE);
+                btnSubmit.get(i).setVisibility(View.VISIBLE);
+                final int k = i;
+                scrollView.post(new Runnable(){
+                    public void run(){
+                        scrollView.scrollTo(0, btnSubmit.get(k).getBottom());
+                    }
+                });
+                break;
+            }
+
+        }
+        if (question.get(question.size() - 1).submitClicked){
+            btnResult.setVisibility(View.VISIBLE);
+            scrollView.post(new Runnable(){
+                public void run(){
+                    int i = question.size() - 1;
+                    scrollView.scrollTo(0, btnSubmit.get(i).getBottom());
+                }
+            });
         }
     }
 }
